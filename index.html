@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>VetCare | Clínica Veterinária</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Work+Sans:wght@400;600&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="./Styles/Home.css"
+    >
+</head>
+
+<body>
+
+    <!-- ==================================================
+         HEADER
+    =================================================== -->
+
+    <header class="cabecalho">
+
+        <div class="cabecalho__conteudo">
+
+            <!-- Logo -->
+
+            <a
+                href="./index.html"
+                class="logo"
+                aria-label="Ir para o início"
+            >
+
+                <span
+                    class="logo__simbolo"
+                    aria-hidden="true"
+                >
+                    V
+                </span>
+
+                <span class="logo__nome">
+                    VetCare
+                </span>
+
+            </a>
+
+
+            <!-- Controle do menu mobile -->
+
+            <input
+                type="checkbox"
+                id="menu-mobile"
+                class="menu-mobile__controle"
+            >
+
+
+            <!-- Botão hambúrguer -->
+
+            <label
+                for="menu-mobile"
+                class="menu-mobile__botao"
+                aria-label="Abrir menu"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </label>
+
+
+            <!-- Navegação -->
+
+            <nav
+                class="navegacao"
+                aria-label="Navegação principal"
+            >
+
+                <ul class="navegacao__lista">
+
+                    <li>
+                        <a
+                            href="./index.html"
+                            class="navegacao__link navegacao__link--ativo"
+                        >
+                            Início
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="./servicos.html"
+                            class="navegacao__link"
+                        >
+                            Serviços
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="./veterinarios.html"
+                            class="navegacao__link"
+                        >
+                            Veterinários
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="./sobre.html"
+                            class="navegacao__link"
+                        >
+                            Sobre
+                        </a>
+                    </li>
+
+                    <li>
+                        <a
+                            href="./contato.html"
+                            class="navegacao__link"
+                        >
+                            Contato
+                        </a>
+                    </li>
+
+                </ul>
+
+                <!-- CTA dentro do menu mobile -->
+
+                <a
+                    href="./agendamento.html"
+                    class="botao botao--primario navegacao__agendar"
+                >
+                    Agendar consulta
+                </a>
+
+            </nav>
+
+
+            <!-- CTA desktop -->
+
+            <a
+                href="./agendamento.html"
+                class="botao botao--primario cabecalho__agendar"
+            >
+                Agendar consulta
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         CONTEÚDO PRINCIPAL
+    =================================================== -->
+
+    <main>
+
+        <!-- ==================================================
+             HERO
+        =================================================== -->
+
+        <section class="hero">
+
+            <div class="container hero__conteudo">
+
+                <!-- Texto -->
+
+                <div class="hero__texto">
+
+                    <span class="badge">
+                        Cuidado veterinário completo
+                    </span>
+
+                    <h1 class="hero__titulo">
+                        Cuidado que também é ciência
+                    </h1>
+
+                    <p class="hero__descricao">
+                        Consultas, vacinas e acompanhamento para cuidar
+                        do seu pet em todas as fases da vida.
+                    </p>
+
+                    <div class="hero__acoes">
+
+                        <a
+                            href="./agendamento.html"
+                            class="botao botao--primario"
+                        >
+                            Agendar consulta
+                        </a>
+
+                        <a
+                            href="./servicos.html"
+                            class="botao botao--secundario"
+                        >
+                            Ver serviços
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Imagem principal -->
+
+                <div class="hero__imagem">
+
+                    <img
+                        src="./assets/images/hero-vetcare.jpg"
+                        alt="Veterinário cuidando de um animal na clínica VetCare"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SERVIÇOS
+        =================================================== -->
+
+        <section class="servicos">
+
+            <div class="container">
+
+                <header class="secao__cabecalho">
+
+                    <h2 class="secao__titulo">
+                        Nossos serviços
+                    </h2>
+
+                    <p class="secao__descricao">
+                        Cuidado completo para diferentes necessidades.
+                    </p>
+
+                </header>
+
+
+                <!-- ==========================================
+                     CARROSSEL MOBILE
+                =========================================== -->
+
+                <div class="carrossel-servicos">
+
+                    <div class="carrossel-servicos__trilho">
+
+                        <!-- Slide 01 -->
+
+                        <article class="carrossel-servicos__slide">
+
+                            <img
+                                src="./assets/images/servico-consulta.jpg"
+                                alt="Consulta veterinária"
+                            >
+
+                            <div class="carrossel-servicos__conteudo">
+
+                                <span>
+                                    Atendimento geral
+                                </span>
+
+                                <h3>
+                                    Consulta clínica
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Slide 02 -->
+
+                        <article class="carrossel-servicos__slide">
+
+                            <img
+                                src="./assets/images/servico-vacinacao.jpg"
+                                alt="Vacinação veterinária"
+                            >
+
+                            <div class="carrossel-servicos__conteudo">
+
+                                <span>
+                                    Prevenção
+                                </span>
+
+                                <h3>
+                                    Vacinação
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!-- Slide 03 -->
+
+                        <article class="carrossel-servicos__slide">
+
+                            <img
+                                src="./assets/images/servico-banho-tosa.jpg"
+                                alt="Serviço de banho e tosa"
+                            >
+
+                            <div class="carrossel-servicos__conteudo">
+
+                                <span>
+                                    Cuidado
+                                </span>
+
+                                <h3>
+                                    Banho e tosa
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+
+                        <!--
+                            Repetimos o primeiro slide no final.
+
+                            Isso ajuda a deixar a animação automática
+                            mais suave quando trabalharmos com keyframes.
+                        -->
+
+                        <article
+                            class="carrossel-servicos__slide"
+                            aria-hidden="true"
+                        >
+
+                            <img
+                                src="./assets/images/servico-consulta.jpg"
+                                alt=""
+                            >
+
+                            <div class="carrossel-servicos__conteudo">
+
+                                <span>
+                                    Atendimento geral
+                                </span>
+
+                                <h3>
+                                    Consulta clínica
+                                </h3>
+
+                            </div>
+
+                        </article>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     CARDS DESKTOP
+                =========================================== -->
+
+                <div class="servicos__grade">
+
+                    <!-- Serviço 01 -->
+
+                    <article class="card-servico">
+
+                        <h3 class="card-servico__titulo">
+                            Consulta clínica
+                        </h3>
+
+                        <span class="card-servico__categoria">
+                            Atendimento geral
+                        </span>
+
+                        <p class="card-servico__descricao">
+                            Avaliação completa e acompanhamento preventivo
+                            para cuidar da saúde do seu pet.
+                        </p>
+
+                        <a
+                            href="./detalhes-servico.html"
+                            class="card-servico__link"
+                        >
+                            Saiba mais →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Serviço 02 -->
+
+                    <article class="card-servico">
+
+                        <h3 class="card-servico__titulo">
+                            Vacinação
+                        </h3>
+
+                        <span class="card-servico__categoria">
+                            Prevenção
+                        </span>
+
+                        <p class="card-servico__descricao">
+                            Protocolos de vacinação para acompanhar
+                            cada fase da vida do seu pet.
+                        </p>
+
+                        <a
+                            href="./detalhes-servico.html"
+                            class="card-servico__link"
+                        >
+                            Saiba mais →
+                        </a>
+
+                    </article>
+
+
+                    <!-- Serviço 03 -->
+
+                    <article class="card-servico">
+
+                        <h3 class="card-servico__titulo">
+                            Banho e tosa
+                        </h3>
+
+                        <span class="card-servico__categoria">
+                            45–60 min
+                        </span>
+
+                        <p class="card-servico__descricao">
+                            Banho e tosa para seu pet de forma
+                            tranquila, confortável e segura.
+                        </p>
+
+                        <a
+                            href="./detalhes-servico.html"
+                            class="card-servico__link"
+                        >
+                            Saiba mais →
+                        </a>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             VETERINÁRIOS
+        =================================================== -->
+
+        <section class="veterinarios">
+
+            <div class="container">
+
+                <header class="secao__cabecalho">
+
+                    <h2 class="secao__titulo">
+                        Quem cuida do seu pet
+                    </h2>
+
+                    <p class="secao__descricao">
+                        Conheça profissionais preparados para oferecer
+                        atendimento próximo e acolhedor.
+                    </p>
+
+                </header>
+
+
+                <div class="veterinarios__grade">
+
+                    <!-- Camila -->
+
+                    <article class="card-veterinario">
+
+                        <div class="card-veterinario__imagem">
+
+                            <img
+                                src="./assets/images/camila-rocha.jpg"
+                                alt="Dra. Camila Rocha"
+                            >
+
+                        </div>
+
+                        <div class="card-veterinario__conteudo">
+
+                            <h3 class="card-veterinario__nome">
+                                Dra. Camila Rocha
+                            </h3>
+
+                            <p class="card-veterinario__especialidade">
+                                Clínica geral
+                            </p>
+
+                            <a
+                                href="./perfil-veterinario.html"
+                                class="card-veterinario__link"
+                            >
+                                Ver perfil →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- Lucas -->
+
+                    <article class="card-veterinario">
+
+                        <div class="card-veterinario__imagem">
+
+                            <img
+                                src="./assets/images/lucas-martins.jpg"
+                                alt="Dr. Lucas Martins"
+                            >
+
+                        </div>
+
+                        <div class="card-veterinario__conteudo">
+
+                            <h3 class="card-veterinario__nome">
+                                Dr. Lucas Martins
+                            </h3>
+
+                            <p class="card-veterinario__especialidade">
+                                Dermatologia
+                            </p>
+
+                            <a
+                                href="./perfil-veterinario.html"
+                                class="card-veterinario__link"
+                            >
+                                Ver perfil →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- André -->
+
+                    <article class="card-veterinario">
+
+                        <div class="card-veterinario__imagem">
+
+                            <img
+                                src="./assets/images/andre-silva.jpg"
+                                alt="Dr. André Silva"
+                            >
+
+                        </div>
+
+                        <div class="card-veterinario__conteudo">
+
+                            <h3 class="card-veterinario__nome">
+                                Dr. André Silva
+                            </h3>
+
+                            <p class="card-veterinario__especialidade">
+                                Medicina preventiva
+                            </p>
+
+                            <a
+                                href="./perfil-veterinario.html"
+                                class="card-veterinario__link"
+                            >
+                                Ver perfil →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CTA FINAL
+        =================================================== -->
+
+        <section class="cta-final">
+
+            <div class="container">
+
+                <div class="cta-final__conteudo">
+
+                    <div>
+
+                        <h2 class="cta-final__titulo">
+                            Seu pet merece cuidado de perto
+                        </h2>
+
+                        <p class="cta-final__descricao">
+                            Agende uma consulta e conte com a VetCare
+                            para acompanhar cada etapa.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="./agendamento.html"
+                        class="botao botao--primario"
+                    >
+                        Agendar agora
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+         No CSS ele será exibido apenas no desktop
+    =================================================== -->
+
+    <footer class="rodape">
+
+        <div class="container rodape__conteudo">
+
+            <!-- Marca -->
+
+            <div class="rodape__marca">
+
+                <h2 class="rodape__logo">
+                    VetCare
+                </h2>
+
+                <p>
+                    Cuidado veterinário com acolhimento,
+                    confiança e ciência.
+                </p>
+
+            </div>
+
+
+            <!-- Navegação -->
+
+            <div class="rodape__coluna">
+
+                <h3>
+                    Navegação
+                </h3>
+
+                <nav aria-label="Navegação do rodapé">
+
+                    <ul>
+
+                        <li>
+                            <a href="./index.html">
+                                Início
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./servicos.html">
+                                Serviços
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./veterinarios.html">
+                                Veterinários
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./sobre.html">
+                                Sobre
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="./contato.html">
+                                Contato
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </nav>
+
+            </div>
+
+
+            <!-- Contato -->
+
+            <div class="rodape__coluna">
+
+                <h3>
+                    Contato
+                </h3>
+
+                <address>
+
+                    <p>
+                        (31) 3333-3333
+                    </p>
+
+                    <p>
+                        contato@vetcare.com.br
+                    </p>
+
+                    <p>
+                        Belo Horizonte - MG
+                    </p>
+
+                </address>
+
+            </div>
+
+        </div>
+
+
+        <div class="container rodape__inferior">
+
+            <p>
+                © VetCare · Cuidado que também é ciência
+            </p>
+
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
