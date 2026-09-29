@@ -1,0 +1,175 @@
+/* =========================================================
+   VETERINARIOS - VETCARE
+========================================================= */
+
+.profissionais-conteudo{
+    padding-top:32px;
+    padding-bottom:56px;
+}
+
+.profissionais{
+    display:none;
+}
+
+.profissionais--padrao{
+    display:block;
+}
+
+.profissionais:target{
+    display:block;
+}
+
+.pagina-veterinarios:has(.profissionais:target) .profissionais--padrao:not(:target){
+    display:none;
+}
+
+.filtro-profissionais{
+    margin-top:28px;
+    border:0;
+}
+
+.filtro-profissionais legend{
+    margin-bottom:12px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.filtro-profissionais>input{
+    display:none;
+}
+
+.filtros{
+    margin-bottom:24px;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+}
+
+.filtros label{
+    min-width:max-content;
+    padding:8px 12px;
+    border-radius:999px;
+    background-color:var(--cor-secundaria);
+    color:var(--cor-primaria);
+    font-size:14px;
+    cursor:pointer;
+}
+
+.profissionais-lista{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.profissional-card{
+    padding:16px;
+    display:block;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+    background-color:var(--cor-fundo);
+}
+
+.profissional-card img{
+    aspect-ratio:326/190;
+    object-fit:cover;
+    border-radius:var(--raio-pequeno);
+}
+
+.profissional-card div{
+    padding-top:12px;
+}
+
+.profissional-card h2{
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+    font-weight:400;
+}
+
+.profissional-card p{
+    margin:6px 0 12px;
+    color:var(--cor-primaria);
+    font-size:14px;
+}
+
+.profissional-card span{
+    color:var(--cor-primaria);
+    font-size:14px;
+    font-weight:600;
+}
+
+input[id$="-clinica"]:checked~.profissionais-lista .profissional-card:not(.profissional-card--clinica),input[id$="-dermatologia"]:checked~.profissionais-lista .profissional-card:not(.profissional-card--dermatologia),input[id$="-preventiva"]:checked~.profissionais-lista .profissional-card:not(.profissional-card--preventiva){
+    display:none;
+}
+
+input[id$="-todos"]:checked~.filtros label[for$="-todos"],input[id$="-clinica"]:checked~.filtros label[for$="-clinica"],input[id$="-dermatologia"]:checked~.filtros label[for$="-dermatologia"],input[id$="-preventiva"]:checked~.filtros label[for$="-preventiva"]{
+    background-color:var(--cor-primaria);
+    color:var(--cor-fundo);
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .profissionais-lista{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .profissionais-conteudo{
+        padding-top:48px;
+        padding-bottom:64px;
+    }
+
+    .filtros{
+        overflow:visible;
+    }
+
+    .profissionais-lista{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:24px;
+    }
+
+    .profissional-card img{
+        aspect-ratio:16/10;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .profissionais-conteudo{
+        padding-top:64px;
+        padding-bottom:80px;
+    }
+
+    .filtros{
+        overflow:visible;
+    }
+
+    .profissionais-lista{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:40px;
+    }
+
+    .profissional-card{
+        transition:0.2s ease;
+    }
+
+    .profissional-card:hover{
+        transform:translateY(-4px);
+    }
+
+    .profissional-card img{
+        aspect-ratio:368/260;
+    }
+}

@@ -1,0 +1,168 @@
+/* =========================================================
+   SERVICOS - VETCARE
+========================================================= */
+
+.pagina-servicos{
+    padding:32px 0 56px;
+}
+
+.servicos-conteudo{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.filtro-servicos{
+    border:0;
+}
+
+.filtro-servicos legend{
+    margin-bottom:12px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.filtro-servicos>input{
+    display:none;
+}
+
+.filtros{
+    margin-bottom:24px;
+    display:flex;
+    gap:8px;
+    overflow-x:auto;
+}
+
+.filtros label{
+    min-width:max-content;
+    padding:8px 12px;
+    border-radius:999px;
+    background-color:var(--cor-secundaria);
+    color:var(--cor-primaria);
+    font-size:14px;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+#todos:checked~.filtros label[for="todos"],#higiene:checked~.filtros label[for="higiene"],#prevencao:checked~.filtros label[for="prevencao"],#acompanhamento:checked~.filtros label[for="acompanhamento"]{
+    background-color:var(--cor-primaria);
+    color:var(--cor-fundo);
+}
+
+.servicos-lista{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.servico-card{
+    overflow:hidden;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+    background-color:var(--cor-fundo);
+}
+
+.servico-card img{
+    aspect-ratio:358/210;
+    object-fit:cover;
+}
+
+.servico-card div{
+    padding:20px;
+}
+
+.servico-card h2{
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+    font-weight:400;
+}
+
+.servico-card span{
+    margin:8px 0;
+    display:block;
+    color:var(--cor-terciaria);
+    font-size:13px;
+    font-weight:600;
+}
+
+.servico-card p{
+    margin-bottom:16px;
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+.servico-card a{
+    color:var(--cor-primaria);
+    font-size:14px;
+    font-weight:600;
+}
+
+#higiene:checked~.servicos-lista .servico-card:not(.servico-card--higiene),#prevencao:checked~.servicos-lista .servico-card:not(.servico-card--prevencao),#acompanhamento:checked~.servicos-lista .servico-card:not(.servico-card--acompanhamento){
+    display:none;
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .servicos-lista{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .pagina-servicos{
+        padding:48px 0 64px;
+    }
+
+    .servicos-conteudo{
+        gap:32px;
+    }
+
+    .filtros{
+        overflow:visible;
+    }
+
+    .servicos-lista{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:24px;
+    }
+
+    .servico-card img{
+        aspect-ratio:16/10;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .pagina-servicos{
+            padding:64px 0 80px;
+        }
+
+        .servicos-conteudo{
+            gap:40px;
+        }
+
+        .filtros{
+            overflow:visible;
+        }
+
+        .servicos-lista{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:40px;
+        }
+
+        .servico-card img{
+            aspect-ratio:400/240;
+        }
+}

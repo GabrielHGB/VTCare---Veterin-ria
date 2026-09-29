@@ -1,0 +1,147 @@
+/* =========================================================
+   CONTATO - VETCARE
+========================================================= */
+
+.pagina-contato{
+    padding:32px 0 56px;
+}
+
+.contato-conteudo{
+    display:flex;
+    flex-direction:column;
+    gap:28px;
+}
+
+.contato-informacoes{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+.contato-informacoes article{
+    padding:20px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+}
+
+.contato-informacoes h2{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+}
+
+.contato-informacoes p{
+    color:var(--cor-texto-secundario);
+}
+
+.contato-principal{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.contato-principal figure{
+    overflow:hidden;
+    border-radius:var(--raio-grande);
+}
+
+.contato-principal img{
+    aspect-ratio:358/250;
+    object-fit:cover;
+}
+
+.contato-principal form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.contato-principal label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.contato-principal input,.contato-principal textarea{
+    padding:14px 16px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-pequeno);
+    outline:none;
+    background-color:var(--cor-fundo);
+}
+
+.contato-principal input:focus,.contato-principal textarea:focus{
+    border-color:var(--cor-primaria);
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .contato-informacoes{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .pagina-contato{
+        padding:48px 0 64px;
+    }
+
+    .contato-conteudo{
+        gap:32px;
+    }
+
+    .contato-informacoes{
+        grid-template-columns:repeat(3,1fr);
+        gap:20px;
+    }
+
+    .contato-principal{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:32px;
+        align-items:start;
+    }
+
+    .contato-principal img{
+        aspect-ratio:4/3;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .pagina-contato{
+        padding:64px 0 80px;
+    }
+
+    .contato-conteudo{
+        gap:40px;
+    }
+
+    .contato-informacoes{
+        grid-template-columns:repeat(3,1fr);
+        gap:40px;
+    }
+
+    .contato-principal{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:start;
+    }
+
+    .contato-principal img{
+        aspect-ratio:620/440;
+    }
+}

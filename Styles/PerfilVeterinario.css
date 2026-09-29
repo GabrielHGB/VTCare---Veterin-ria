@@ -1,0 +1,167 @@
+/* =========================================================
+   PERFILVETERINARIO - VETCARE
+========================================================= */
+
+.perfil-conteudo{
+    padding-top:32px;
+    padding-bottom:56px;
+}
+
+.perfil{
+    display:none;
+}
+
+.perfil--padrao{
+    display:block;
+}
+
+.perfil:target{
+    display:block;
+}
+
+.pagina-perfil:has(.perfil:target) .perfil--padrao:not(:target){
+    display:none;
+}
+
+.perfil__topo{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.perfil__topo figure{
+    overflow:hidden;
+    border-radius:var(--raio-grande);
+}
+
+.perfil__topo img{
+    aspect-ratio:358/330;
+    object-fit:cover;
+}
+
+.perfil__texto{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.perfil__texto h1{
+    font-family:var(--fonte-titulo);
+    font-size:36px;
+    font-weight:600;
+}
+
+.perfil__texto>p{
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+.perfil__crmv{
+    width:100%;
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+}
+
+.perfil__crmv span{
+    color:var(--cor-texto-secundario);
+    font-size:13px;
+    font-weight:600;
+}
+
+.perfil__detalhes{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.perfil__detalhes article{
+    padding:20px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+}
+
+.perfil__detalhes h2{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+}
+
+.perfil__detalhes p{
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .perfil__topo{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .perfil-conteudo{
+        padding-top:48px;
+        padding-bottom:64px;
+    }
+
+    .perfil__topo{
+        margin-top:32px;
+        display:grid;
+        grid-template-columns:300px 1fr;
+        gap:32px;
+        align-items:center;
+    }
+
+    .perfil__topo img{
+        aspect-ratio:4/5;
+    }
+
+    .perfil__detalhes{
+        margin-top:48px;
+        grid-template-columns:repeat(2,1fr);
+        gap:24px;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .perfil-conteudo{
+        padding-top:64px;
+        padding-bottom:80px;
+    }
+
+    .perfil__topo{
+        margin-top:32px;
+        display:grid;
+        grid-template-columns:500px 1fr;
+        gap:40px;
+        align-items:center;
+    }
+
+    .perfil__topo img{
+        aspect-ratio:500/520;
+    }
+
+    .perfil__detalhes{
+        margin-top:64px;
+        grid-template-columns:repeat(2,1fr);
+        gap:40px;
+    }
+}

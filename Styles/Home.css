@@ -1,1175 +1,513 @@
 /* =========================================================
-   VETCARE
-   HOME - MOBILE + DESKTOP
-========================================================= */
-
-
-/* =========================================================
-   VARIÁVEIS
-========================================================= */
-
-:root{
-    --cor-primaria: #2F4C3E;
-    --cor-primaria-escura: #1F332A;
-
-    --cor-areia: #EDE3D0;
-    --cor-terracota: #C1694F;
-    --cor-acao: #E2A33B;
-
-    --cor-fundo: #FBF8F2;
-    --cor-texto: #1E2420;
-    --cor-texto-secundario: #4A534C;
-
-    --cor-branca: #FFFFFF;
-    --cor-borda: #EDE3D0;
-
-    --fonte-titulo: "Fraunces", serif;
-    --fonte-corpo: "Work Sans", sans-serif;
-
-    --raio-pequeno: 12px;
-    --raio-medio: 16px;
-    --raio-grande: 24px;
-
-    --espaco-8: 8px;
-    --espaco-12: 12px;
-    --espaco-16: 16px;
-    --espaco-20: 20px;
-    --espaco-24: 24px;
-    --espaco-32: 32px;
-    --espaco-40: 40px;
-    --espaco-48: 48px;
-    --espaco-64: 64px;
-    --espaco-80: 80px;
-}
-
-
-/* =========================================================
-   RESET
-========================================================= */
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    min-height: 100vh;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    font-family: var(--fonte-corpo);
-}
-
-img{
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-a{
-    color: inherit;
-    text-decoration: none;
-}
-
-ul{
-    list-style: none;
-}
-
-button,
-input{
-    font: inherit;
-}
-
-
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.container{
-    width: min(100% - 32px, 1280px);
-    margin: 0 auto;
-}
-
-
-/* =========================================================
-   BOTÕES
-========================================================= */
-
-.botao{
-    min-height: 50px;
-    padding: 0 24px;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: var(--raio-pequeno);
-
-    font-size: 14px;
-    font-weight: 600;
-
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        color 0.2s ease;
-}
-
-.botao:hover{
-    transform: translateY(-2px);
-}
-
-.botao--primario{
-    background-color: var(--cor-acao);
-    color: var(--cor-primaria-escura);
-}
-
-.botao--primario:hover{
-    background-color: #D49431;
-}
-
-.botao--secundario{
-    background-color: transparent;
-    color: var(--cor-primaria);
-
-    border: 1px solid var(--cor-primaria);
-}
-
-.botao--secundario:hover{
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
-}
-
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.cabecalho{
-    width: 100%;
-    background-color: var(--cor-fundo);
-
-    position: relative;
-    z-index: 10;
-}
-
-.cabecalho__conteudo{
-    min-height: 72px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 16px;
-}
-
-
-/* =========================================================
-   LOGO
-========================================================= */
-
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.logo__simbolo{
-    width: 32px;
-    height: 32px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background-color: var(--cor-primaria);
-    color: var(--cor-fundo);
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.logo__nome{
-    font-family: var(--fonte-titulo);
-    font-size: 22px;
-
-    color: var(--cor-primaria-escura);
-}
-
-
-/* =========================================================
-   MENU MOBILE
-========================================================= */
-
-.menu-mobile__controle{
-    display: none;
-}
-
-.menu-mobile__botao{
-    width: 44px;
-    height: 44px;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    gap: 6px;
-
-    background-color: var(--cor-areia);
-
-    border-radius: var(--raio-pequeno);
-
-    cursor: pointer;
-
-    position: relative;
-    z-index: 20;
-}
-
-.menu-mobile__botao span{
-    width: 20px;
-    height: 2px;
-
-    background-color: var(--cor-primaria);
-
-    border-radius: 2px;
-
-    transition:
-        transform 0.25s ease,
-        opacity 0.25s ease;
-}
-
-
-/* =========================================================
-   NAVEGAÇÃO MOBILE
-========================================================= */
-
-.navegacao{
-    width: 100%;
-
-    position: absolute;
-
-    top: 72px;
-    left: 0;
-
-    padding: 24px 16px;
-
-    background-color: var(--cor-fundo);
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
-
-    border-top: 1px solid var(--cor-borda);
-
-    opacity: 0;
-    visibility: hidden;
-
-    transform: translateY(-15px);
-
-    transition:
-        opacity 0.25s ease,
-        transform 0.25s ease,
-        visibility 0.25s ease;
-}
-
-.navegacao__lista{
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-}
-
-.navegacao__link{
-    font-size: 15px;
-    font-weight: 600;
-
-    color: var(--cor-texto);
-}
-
-.navegacao__link--ativo{
-    color: var(--cor-primaria);
-}
-
-.navegacao__agendar{
-    width: 100%;
-}
-
-.cabecalho__agendar{
-    display: none;
-}
-
-
-/* =========================================================
-   ABRIR MENU
-========================================================= */
-
-.menu-mobile__controle:checked ~ .navegacao{
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-}
-
-
-/* animação do hambúrguer */
-
-.menu-mobile__controle:checked + .menu-mobile__botao span:nth-child(1){
-    transform: translateY(8px) rotate(45deg);
-}
-
-.menu-mobile__controle:checked + .menu-mobile__botao span:nth-child(2){
-    opacity: 0;
-}
-
-.menu-mobile__controle:checked + .menu-mobile__botao span:nth-child(3){
-    transform: translateY(-8px) rotate(-45deg);
-}
-
-
-/* =========================================================
-   HERO
+   HOME - VETCARE
 ========================================================= */
 
 .hero{
-    padding: 24px 0 40px;
+    padding:24px 0 40px;
 }
 
 .hero__conteudo{
-    display: flex;
-    flex-direction: column;
-
-    gap: 24px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
 }
 
 .hero__texto{
-    display: flex;
-    flex-direction: column;
-
-    gap: 16px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
 }
 
-.badge{
-    width: fit-content;
-
-    padding: 8px 12px;
-
-    border-radius: 999px;
-
-    background-color: var(--cor-areia);
-
-    color: var(--cor-primaria);
-
-    font-size: 14px;
+.hero__texto h1{
+    font-family:var(--fonte-titulo);
+    font-size:36px;
+    font-weight:600;
+    line-height:1.2;
 }
 
-.hero__titulo{
-    font-family: var(--fonte-titulo);
-
-    font-size: 36px;
-    font-weight: 600;
-
-    line-height: 1.2;
-
-    color: var(--cor-texto);
-}
-
-.hero__descricao{
-    font-size: 16px;
-    line-height: 1.5;
-
-    color: var(--cor-texto-secundario);
+.hero__texto p{
+    color:var(--cor-texto-secundario);
+    font-size:16px;
+    line-height:1.5;
 }
 
 .hero__acoes{
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
 }
 
 .hero__acoes .botao{
-    width: 100%;
+    width:100%;
 }
 
 .hero__imagem{
-    width: 100%;
-
-    border-radius: var(--raio-grande);
-
-    overflow: hidden;
+    overflow:hidden;
+    border-radius:var(--raio-grande);
 }
 
 .hero__imagem img{
-    width: 100%;
-    aspect-ratio: 358 / 233;
-
-    object-fit: cover;
+    aspect-ratio:358/233;
+    object-fit:cover;
 }
 
-
-/* =========================================================
-   CABEÇALHO DE SEÇÃO
-========================================================= */
+.home-servicos,.home-profissionais{
+    padding:40px 0;
+}
 
 .secao__cabecalho{
-    margin-bottom: 24px;
+    margin-bottom:24px;
 }
 
-.secao__titulo{
-    margin-bottom: 8px;
-
-    font-family: var(--fonte-titulo);
-
-    font-size: 28px;
-    font-weight: 600;
-
-    line-height: 1.2;
+.secao__cabecalho h2{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:28px;
+    font-weight:600;
 }
 
-.secao__descricao{
-    font-size: 14px;
-    line-height: 1.5;
-
-    color: var(--cor-texto-secundario);
+.secao__cabecalho p{
+    color:var(--cor-texto-secundario);
+    font-size:14px;
+    line-height:1.5;
 }
 
+.carrossel{
+    width:100%;
+    overflow:hidden;
+    border-radius:var(--raio-grande);
+}
+
+.carrossel__trilho{
+    width:400%;
+    display:flex;
+}
+
+.carrossel__slide{
+    width:25%;
+    position:relative;
+    flex-shrink:0;
+    overflow:hidden;
+}
+
+.carrossel__slide img{
+    aspect-ratio:358/233;
+    object-fit:cover;
+}
+
+.carrossel--servicos .carrossel__trilho{
+    animation:carrosselServicos 16s infinite ease-in-out;
+}
+
+.carrossel--servicos .carrossel__slide>div{
+    width:100%;
+    padding:40px 20px 18px;
+    position:absolute;
+    left:0;
+    bottom:0;
+    color:var(--cor-fundo);
+    background:linear-gradient(to top,rgba(31,51,42,0.9),transparent);
+}
+
+.carrossel--servicos h3{
+    margin-top:4px;
+    font-family:var(--fonte-titulo);
+    font-size:24px;
+}
+
+.carrossel--profissionais .carrossel__trilho{
+    animation:carrosselProfissionais 18s infinite ease-in-out;
+}
+
+.carrossel--profissionais .card-profissional{
+    padding:16px;
+    background-color:var(--cor-fundo);
+    border:1px solid var(--cor-secundaria);
+}
+
+.carrossel--profissionais .card-profissional img{
+    border-radius:var(--raio-pequeno);
+}
+
+.card-profissional div{
+    padding-top:12px;
+}
+
+.card-profissional h3{
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+    font-weight:400;
+}
+
+.card-profissional p{
+    margin-top:6px;
+    color:var(--cor-primaria);
+    font-size:14px;
+}
+
+.home-servicos__grade,.home-profissionais__grade{
+    display:none;
+}
+
+.home-cta{
+    padding:40px 0 56px;
+}
+
+.home-cta__conteudo{
+    padding:24px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    border-radius:var(--raio-grande);
+    background-color:var(--cor-secundaria);
+}
+
+.home-cta h2{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:28px;
+}
+
+.home-cta p{
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+@keyframes carrosselServicos{
+    0%,20%{
+        transform:translateX(0);
+    }
+
+    27%,47%{
+        transform:translateX(-25%);
+    }
+
+    54%,74%{
+        transform:translateX(-50%);
+    }
+
+    81%,100%{
+        transform:translateX(-75%);
+    }
+
+}
+
+@keyframes carrosselProfissionais{
+    0%,20%{
+        transform:translateX(0);
+    }
+
+    27%,47%{
+        transform:translateX(-25%);
+    }
+
+    54%,74%{
+        transform:translateX(-50%);
+    }
+
+    81%,100%{
+        transform:translateX(-75%);
+    }
+
+}
 
 /* =========================================================
-   SERVIÇOS
+   MOBILE - até 699px
 ========================================================= */
 
-.servicos{
-    padding: 40px 0;
-}
-
-
-/* =========================================================
-   CARROSSEL MOBILE
-========================================================= */
-
-.carrossel-servicos{
-    width: 100%;
-
-    overflow: hidden;
-
-    border-radius: var(--raio-grande);
-}
-
-.carrossel-servicos__trilho{
-    display: flex;
-
-    width: 400%;
-
-    animation: moverCarrossel 14s infinite ease-in-out;
-}
-
-.carrossel-servicos__slide{
-    width: 25%;
-
-    position: relative;
-
-    flex-shrink: 0;
-
-    overflow: hidden;
-
-    border-radius: var(--raio-grande);
-}
-
-.carrossel-servicos__slide img{
-    width: 100%;
-    aspect-ratio: 358 / 233;
-
-    object-fit: cover;
-}
-
-.carrossel-servicos__conteudo{
-    width: 100%;
-
-    position: absolute;
-
-    left: 0;
-    bottom: 0;
-
-    padding: 24px 20px 18px;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(31, 51, 42, 0.92),
-            rgba(31, 51, 42, 0)
-        );
-
-    color: var(--cor-fundo);
-}
-
-.carrossel-servicos__conteudo span{
-    display: block;
-
-    margin-bottom: 4px;
-
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.carrossel-servicos__conteudo h3{
-    font-family: var(--fonte-titulo);
-
-    font-size: 24px;
-    font-weight: 600;
-}
-
-
-/* =========================================================
-   ANIMAÇÃO DO CARROSSEL
-========================================================= */
-
-@keyframes moverCarrossel{
-
-    /* Slide 01 parado */
-
-    0%{
-        transform: translateX(0);
-    }
-
-    20%{
-        transform: translateX(0);
-    }
-
-
-    /* Vai para slide 02 */
-
-    27%{
-        transform: translateX(-25%);
-    }
-
-    47%{
-        transform: translateX(-25%);
-    }
-
-
-    /* Vai para slide 03 */
-
-    54%{
-        transform: translateX(-50%);
-    }
-
-    74%{
-        transform: translateX(-50%);
-    }
-
-
-    /* Vai para cópia do slide 01 */
-
-    81%{
-        transform: translateX(-75%);
-    }
-
-    94%{
-        transform: translateX(-75%);
-    }
-
-
-    /* Fecha o ciclo */
-
-    100%{
-        transform: translateX(-75%);
-    }
-}
-
-
-/* =========================================================
-   SERVIÇOS DESKTOP
-========================================================= */
-
-.servicos__grade{
-    display: none;
-}
-
-
-/* =========================================================
-   CARD SERVIÇO
-========================================================= */
-
-.card-servico{
-    padding: 24px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 12px;
-
-    background-color: var(--cor-fundo);
-
-    border: 1px solid var(--cor-areia);
-
-    border-radius: var(--raio-medio);
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.card-servico:hover{
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(31, 51, 42, 0.08);
-}
-
-.card-servico__titulo{
-    font-family: var(--fonte-titulo);
-
-    font-size: 22px;
-    font-weight: 400;
-}
-
-.card-servico__categoria{
-    font-size: 13px;
-    font-weight: 600;
-
-    color: var(--cor-terracota);
-}
-
-.card-servico__descricao{
-    font-size: 16px;
-    line-height: 1.5;
-
-    color: var(--cor-texto-secundario);
-}
-
-.card-servico__link{
-    width: fit-content;
-
-    margin-top: auto;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    color: var(--cor-primaria);
-}
-
-
-/* =========================================================
-   VETERINÁRIOS
-========================================================= */
-
-.veterinarios{
-    padding: 40px 0;
-}
-
-.veterinarios__grade{
-    display: grid;
-    grid-template-columns: 1fr;
-
-    gap: 24px;
-}
-
-
-/* =========================================================
-   CARD VETERINÁRIO
-========================================================= */
-
-.card-veterinario{
-    padding: 16px;
-
-    background-color: var(--cor-fundo);
-
-    border: 1px solid var(--cor-areia);
-
-    border-radius: var(--raio-medio);
-
-    overflow: hidden;
-
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.card-veterinario:hover{
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 10px 25px rgba(31, 51, 42, 0.08);
-}
-
-.card-veterinario__imagem{
-    width: 100%;
-
-    margin-bottom: 12px;
-
-    border-radius: var(--raio-pequeno);
-
-    overflow: hidden;
-}
-
-.card-veterinario__imagem img{
-    width: 100%;
-    aspect-ratio: 326 / 170;
-
-    object-fit: cover;
-}
-
-.card-veterinario__conteudo{
-    display: flex;
-    flex-direction: column;
-
-    gap: 8px;
-}
-
-.card-veterinario__nome{
-    font-family: var(--fonte-titulo);
-
-    font-size: 22px;
-    font-weight: 400;
-}
-
-.card-veterinario__especialidade{
-    font-size: 14px;
-
-    color: var(--cor-primaria);
-}
-
-.card-veterinario__link{
-    width: fit-content;
-
-    margin-top: 4px;
-
-    font-size: 14px;
-    font-weight: 600;
-
-    color: var(--cor-primaria);
-}
-
-
-/* =========================================================
-   CTA FINAL
-========================================================= */
-
-.cta-final{
-    padding: 40px 0 56px;
-}
-
-.cta-final__conteudo{
-    padding: 24px;
-
-    display: flex;
-    flex-direction: column;
-
-    gap: 20px;
-
-    background-color: var(--cor-areia);
-
-    border-radius: var(--raio-grande);
-}
-
-.cta-final__titulo{
-    margin-bottom: 8px;
-
-    font-family: var(--fonte-titulo);
-
-    font-size: 28px;
-    font-weight: 600;
-
-    line-height: 1.2;
-}
-
-.cta-final__descricao{
-    font-size: 16px;
-    line-height: 1.5;
-
-    color: var(--cor-texto-secundario);
-}
-
-.cta-final .botao{
-    width: 100%;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.rodape{
-    display: none;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (min-width: 700px){
-
-    .container{
-        width: min(100% - 64px, 1280px);
-    }
-
-    .hero__acoes{
-        flex-direction: row;
-    }
-
+@media (max-width:699px){
     .hero__acoes .botao{
-        width: auto;
+        width:100%;
     }
-
-    .veterinarios__grade{
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .cta-final__conteudo{
-        padding: 32px;
-    }
-
 }
 
-
 /* =========================================================
-   DESKTOP
+   TABLET - 700px até 999px
 ========================================================= */
 
-@media (min-width: 1000px){
-
-    /* =====================================================
-       HEADER
-    ====================================================== */
-
-    .cabecalho__conteudo{
-        width: min(100% - 160px, 1280px);
-
-        min-height: 88px;
-
-        margin: 0 auto;
-        padding: 0;
-    }
-
-    .logo{
-        gap: 12px;
-    }
-
-    .logo__simbolo{
-        width: 38px;
-        height: 38px;
-    }
-
-    .menu-mobile__botao{
-        display: none;
-    }
-
-    .navegacao{
-        width: auto;
-
-        position: static;
-
-        padding: 0;
-
-        display: block;
-
-        background-color: transparent;
-
-        border: 0;
-
-        opacity: 1;
-        visibility: visible;
-
-        transform: none;
-    }
-
-    .navegacao__lista{
-        flex-direction: row;
-
-        gap: 32px;
-    }
-
-    .navegacao__link{
-        position: relative;
-    }
-
-    .navegacao__link::after{
-        content: "";
-
-        width: 0;
-        height: 2px;
-
-        position: absolute;
-
-        left: 0;
-        bottom: -8px;
-
-        background-color: var(--cor-primaria);
-
-        transition: width 0.2s ease;
-    }
-
-    .navegacao__link:hover::after,
-    .navegacao__link--ativo::after{
-        width: 100%;
-    }
-
-    .navegacao__agendar{
-        display: none;
-    }
-
-    .cabecalho__agendar{
-        display: inline-flex;
-
-        width: 190px;
-    }
-
-
-    /* =====================================================
-       HERO
-    ====================================================== */
-
+@media (min-width:700px) and (max-width:999px){
     .hero{
-        padding: 64px 0;
+        padding:48px 0;
     }
 
     .hero__conteudo{
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 40px;
-
-        align-items: center;
+        gap:32px;
     }
 
     .hero__texto{
-        gap: 24px;
+        gap:20px;
     }
 
-    .hero__titulo{
-        max-width: 620px;
-
-        font-size: 48px;
-    }
-
-    .hero__descricao{
-        max-width: 540px;
+    .hero__texto h1{
+        max-width:620px;
+        font-size:42px;
     }
 
     .hero__acoes{
-        flex-direction: row;
-
-        gap: 16px;
+        flex-direction:row;
+        gap:16px;
     }
 
     .hero__acoes .botao{
-        width: auto;
+        width:auto;
     }
 
     .hero__imagem img{
-        aspect-ratio: 620 / 430;
+        aspect-ratio:16/9;
     }
 
+    .home-servicos,.home-profissionais{
+        padding:48px 0;
+    }
 
-    /* =====================================================
-       SEÇÕES
-    ====================================================== */
+    .carrossel{
+        display:none;
+    }
+
+    .home-servicos__grade,.home-profissionais__grade{
+        display:grid;
+        grid-template-columns:repeat(2,1fr);
+        gap:24px;
+    }
+
+    .card-servico,.card-profissional{
+        overflow:hidden;
+        border:1px solid var(--cor-secundaria);
+        border-radius:var(--raio-medio);
+        background-color:var(--cor-fundo);
+    }
+
+    .card-servico{
+        padding:20px;
+    }
+
+    .card-profissional{
+        padding:16px;
+    }
+
+    .card-profissional img{
+        aspect-ratio:16/10;
+        object-fit:cover;
+        border-radius:var(--raio-pequeno);
+    }
+
+    .card-servico h3,.card-profissional h3{
+        font-family:var(--fonte-titulo);
+        font-size:22px;
+        font-weight:400;
+    }
+
+    .card-servico span{
+        margin:10px 0;
+        display:block;
+        color:var(--cor-terciaria);
+        font-size:13px;
+        font-weight:600;
+    }
+
+    .card-servico p{
+        margin-bottom:16px;
+        color:var(--cor-texto-secundario);
+        line-height:1.5;
+    }
+
+    .card-servico a{
+        color:var(--cor-primaria);
+        font-size:14px;
+        font-weight:600;
+    }
+
+    .card-profissional div{
+        padding-top:12px;
+    }
+
+    .card-profissional p{
+        margin-top:6px;
+        color:var(--cor-primaria);
+        font-size:14px;
+    }
+
+    .home-cta{
+        padding:48px 0 64px;
+    }
+
+    .home-cta__conteudo{
+        padding:32px;
+        flex-direction:row;
+        align-items:center;
+        justify-content:space-between;
+        gap:32px;
+    }
+
+    .home-cta__conteudo .botao{
+        flex-shrink:0;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .hero{
+        padding:64px 0;
+    }
+
+    .hero__conteudo{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        align-items:center;
+        gap:40px;
+    }
+
+    .hero__texto{
+        display:flex;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:24px;
+    }
+
+    .hero__texto h1{
+        max-width:620px;
+        font-family:var(--fonte-titulo);
+        font-size:48px;
+        font-weight:600;
+        line-height:1.2;
+    }
+
+    .hero__texto p{
+        max-width:540px;
+        color:var(--cor-texto-secundario);
+        line-height:1.5;
+    }
+
+    .hero__acoes{
+        display:flex;
+        gap:16px;
+    }
+
+    .hero__imagem{
+        overflow:hidden;
+        border-radius:var(--raio-grande);
+    }
+
+    .hero__imagem img{
+        aspect-ratio:620/430;
+        object-fit:cover;
+    }
+
+    .home-servicos,.home-profissionais{
+        padding:64px 0;
+    }
 
     .secao__cabecalho{
-        margin-bottom: 32px;
+        margin-bottom:32px;
     }
 
-    .secao__descricao{
-        font-size: 16px;
+    .secao__cabecalho h2{
+        margin-bottom:8px;
+        font-family:var(--fonte-titulo);
+        font-size:28px;
+        font-weight:600;
     }
 
-
-    /* =====================================================
-       SERVIÇOS
-    ====================================================== */
-
-    .servicos{
-        padding: 64px 0;
+    .secao__cabecalho p{
+        color:var(--cor-texto-secundario);
     }
 
-    .carrossel-servicos{
-        display: none;
+    .carrossel{
+        display:none;
     }
 
-    .servicos__grade{
-        display: grid;
-
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 40px;
+    .home-servicos__grade,.home-profissionais__grade{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:40px;
     }
 
-
-    /* =====================================================
-       VETERINÁRIOS
-    ====================================================== */
-
-    .veterinarios{
-        padding: 64px 0;
+    .card-servico,.card-profissional{
+        overflow:hidden;
+        border:1px solid var(--cor-secundaria);
+        border-radius:var(--raio-medio);
+        background-color:var(--cor-fundo);
+        transition:0.2s ease;
     }
 
-    .veterinarios__grade{
-        grid-template-columns: repeat(3, 1fr);
-
-        gap: 40px;
+    .card-servico{
+        padding:24px;
     }
 
-    .card-veterinario__imagem img{
-        aspect-ratio: 368 / 260;
+    .card-servico:hover,.card-profissional:hover{
+        transform:translateY(-4px);
     }
 
-
-    /* =====================================================
-       CTA FINAL
-    ====================================================== */
-
-    .cta-final{
-        padding: 64px 0 80px;
+    .card-servico h3,.card-profissional h3{
+        font-family:var(--fonte-titulo);
+        font-size:22px;
+        font-weight:400;
     }
 
-    .cta-final__conteudo{
-        padding: 40px;
-
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+    .card-servico span{
+        margin:12px 0;
+        display:block;
+        color:var(--cor-terciaria);
+        font-size:13px;
+        font-weight:600;
     }
 
-    .cta-final__conteudo > div{
-        max-width: 700px;
+    .card-servico p{
+        margin-bottom:16px;
+        color:var(--cor-texto-secundario);
+        line-height:1.5;
     }
 
-    .cta-final .botao{
-        width: 190px;
-        flex-shrink: 0;
+    .card-servico a{
+        color:var(--cor-primaria);
+        font-size:14px;
+        font-weight:600;
     }
 
-
-    /* =====================================================
-       FOOTER
-    ====================================================== */
-
-    .rodape{
-        display: block;
-
-        padding: 48px 0;
-
-        background-color: var(--cor-primaria);
-
-        color: var(--cor-fundo);
+    .card-profissional{
+        padding:16px;
     }
 
-    .rodape__conteudo{
-        display: grid;
-
-        grid-template-columns:
-            1.5fr
-            0.7fr
-            1fr;
-
-        gap: 64px;
+    .card-profissional img{
+        aspect-ratio:368/260;
+        object-fit:cover;
+        border-radius:var(--raio-pequeno);
     }
 
-    .rodape__marca{
-        max-width: 380px;
+    .card-profissional div{
+        padding-top:12px;
     }
 
-    .rodape__logo{
-        margin-bottom: 12px;
-
-        font-family: var(--fonte-titulo);
-
-        font-size: 28px;
-        font-weight: 600;
+    .card-profissional p{
+        margin-top:6px;
+        color:var(--cor-primaria);
+        font-size:14px;
     }
 
-    .rodape__marca p{
-        font-size: 16px;
-        line-height: 1.5;
-
-        color: var(--cor-areia);
+    .home-cta{
+        padding:64px 0 80px;
     }
 
-    .rodape__coluna h3{
-        margin-bottom: 12px;
-
-        font-size: 14px;
-        font-weight: 600;
+    .home-cta__conteudo{
+        padding:40px;
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:40px;
+        border-radius:var(--raio-grande);
+        background-color:var(--cor-secundaria);
     }
 
-    .rodape__coluna ul{
-        display: flex;
-        flex-direction: column;
-
-        gap: 8px;
+    .home-cta h2{
+        margin-bottom:8px;
+        font-family:var(--fonte-titulo);
+        font-size:28px;
     }
 
-    .rodape__coluna a,
-    .rodape__coluna p{
-        font-size: 14px;
-        line-height: 1.5;
-
-        color: var(--cor-areia);
+    .home-cta p{
+        color:var(--cor-texto-secundario);
     }
-
-    .rodape__coluna address{
-        font-style: normal;
-    }
-
-    .rodape__inferior{
-        margin-top: 32px;
-        padding-top: 24px;
-
-        border-top:
-            1px solid rgba(237, 227, 208, 0.2);
-    }
-
-    .rodape__inferior p{
-        font-size: 14px;
-
-        color: var(--cor-areia);
-    }
-
-}
-
-
-/* =========================================================
-   DESKTOP GRANDE
-========================================================= */
-
-@media (min-width: 1440px){
-
-    .container{
-        width: 1280px;
-    }
-
-}
-
-
-/* =========================================================
-   ACESSIBILIDADE
-   REDUZ ANIMAÇÕES SE O USUÁRIO PREFERIR
-========================================================= */
-
-@media (prefers-reduced-motion: reduce){
-
-    *{
-        scroll-behavior: auto !important;
-    }
-
-    .carrossel-servicos__trilho{
-        animation: none;
-    }
-
-    .botao,
-    .card-servico,
-    .card-veterinario,
-    .menu-mobile__botao span{
-        transition: none;
-    }
-
 }

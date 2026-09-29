@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VetCare | Veterinários</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../Styles/Style.css">
+		<link rel="stylesheet" href="../Styles/Global.css">
+		<link rel="stylesheet" href="../Styles/Veterinarios.css">
+	</head>
+	<body class="pagina-veterinarios">
+		<header class="cabecalho">
+			<div class="cabecalho__conteudo">
+				<a href="../index.html" class="logo">
+					<span class="logo__simbolo">V</span>
+					<span class="logo__nome">VetCare</span>
+				</a>
+				<input type="checkbox" id="menu-mobile" class="menu-mobile__controle">
+				<label for="menu-mobile" class="menu-mobile__botao">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<nav class="navegacao">
+					<ul class="navegacao__lista">
+						<li>
+							<a href="../index.html" class="navegacao__link">Início</a>
+						</li>
+						<li>
+							<a href="./servicos.html" class="navegacao__link">Serviços</a>
+						</li>
+						<li>
+							<a href="./sobre.html" class="navegacao__link">Sobre</a>
+						</li>
+						<li>
+							<a href="./contato.html" class="navegacao__link">Contato</a>
+						</li>
+					</ul>
+					<a href="./servicos.html" class="botao botao--primario navegacao__cta">Começar agendamento</a>
+				</nav>
+				<a href="./servicos.html" class="botao botao--primario cabecalho__cta">Começar agendamento</a>
+			</div>
+		</header>
+		<main>
+			<div class="container profissionais-conteudo">
+				<section id="banho-tosa" class="profissionais profissionais--padrao">
+					<header class="pagina__cabecalho">
+						<h1>Escolha o profissional</h1>
+						<p>
+							Serviço selecionado:
+							<strong>Banho - Tosa</strong>
+							.
+						</p>
+					</header>
+					<fieldset class="filtro-profissionais">
+						<legend>Filtrar profissionais</legend>
+						<input type="radio" name="filtro-banho-tosa" id="banho-tosa-todos" checked>
+						<input type="radio" name="filtro-banho-tosa" id="banho-tosa-clinica">
+						<input type="radio" name="filtro-banho-tosa" id="banho-tosa-dermatologia">
+						<input type="radio" name="filtro-banho-tosa" id="banho-tosa-preventiva">
+						<div class="filtros">
+							<label for="banho-tosa-todos">Todos</label>
+							<label for="banho-tosa-clinica">Clínica geral</label>
+							<label for="banho-tosa-dermatologia">Dermatologia</label>
+							<label for="banho-tosa-preventiva">Preventiva</label>
+						</div>
+						<div class="profissionais-lista">
+							<a href="./perfil-veterinario.html#banho-tosa--dra-camila-rocha" class="profissional-card profissional-card--clinica">
+								<img src="../Assets/dra-camila-rocha.png" alt="Dra. Camila Rocha">
+								<div>
+									<h2>Dra. Camila Rocha</h2>
+									<p>Clínica geral</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#banho-tosa--dr-lucas-martins" class="profissional-card profissional-card--dermatologia">
+								<img src="../Assets/dr-lucas-martins.png" alt="Dr. Lucas Martins">
+								<div>
+									<h2>Dr. Lucas Martins</h2>
+									<p>Dermatologia</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#banho-tosa--dr-andre-silva" class="profissional-card profissional-card--preventiva">
+								<img src="../Assets/dr-andre-silva.png" alt="Dr. André Silva">
+								<div>
+									<h2>Dr. André Silva</h2>
+									<p>Medicina preventiva</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+						</div>
+					</fieldset>
+				</section>
+				<section id="vacinacao" class="profissionais">
+					<header class="pagina__cabecalho">
+						<h1>Escolha o profissional</h1>
+						<p>
+							Serviço selecionado:
+							<strong>Vacinação</strong>
+							.
+						</p>
+					</header>
+					<fieldset class="filtro-profissionais">
+						<legend>Filtrar profissionais</legend>
+						<input type="radio" name="filtro-vacinacao" id="vacinacao-todos" checked>
+						<input type="radio" name="filtro-vacinacao" id="vacinacao-clinica">
+						<input type="radio" name="filtro-vacinacao" id="vacinacao-dermatologia">
+						<input type="radio" name="filtro-vacinacao" id="vacinacao-preventiva">
+						<div class="filtros">
+							<label for="vacinacao-todos">Todos</label>
+							<label for="vacinacao-clinica">Clínica geral</label>
+							<label for="vacinacao-dermatologia">Dermatologia</label>
+							<label for="vacinacao-preventiva">Preventiva</label>
+						</div>
+						<div class="profissionais-lista">
+							<a href="./perfil-veterinario.html#vacinacao--dra-camila-rocha" class="profissional-card profissional-card--clinica">
+								<img src="../Assets/dra-camila-rocha.png" alt="Dra. Camila Rocha">
+								<div>
+									<h2>Dra. Camila Rocha</h2>
+									<p>Clínica geral</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#vacinacao--dr-lucas-martins" class="profissional-card profissional-card--dermatologia">
+								<img src="../Assets/dr-lucas-martins.png" alt="Dr. Lucas Martins">
+								<div>
+									<h2>Dr. Lucas Martins</h2>
+									<p>Dermatologia</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#vacinacao--dr-andre-silva" class="profissional-card profissional-card--preventiva">
+								<img src="../Assets/dr-andre-silva.png" alt="Dr. André Silva">
+								<div>
+									<h2>Dr. André Silva</h2>
+									<p>Medicina preventiva</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+						</div>
+					</fieldset>
+				</section>
+				<section id="check-up" class="profissionais">
+					<header class="pagina__cabecalho">
+						<h1>Escolha o profissional</h1>
+						<p>
+							Serviço selecionado:
+							<strong>Check-up</strong>
+							.
+						</p>
+					</header>
+					<fieldset class="filtro-profissionais">
+						<legend>Filtrar profissionais</legend>
+						<input type="radio" name="filtro-check-up" id="check-up-todos" checked>
+						<input type="radio" name="filtro-check-up" id="check-up-clinica">
+						<input type="radio" name="filtro-check-up" id="check-up-dermatologia">
+						<input type="radio" name="filtro-check-up" id="check-up-preventiva">
+						<div class="filtros">
+							<label for="check-up-todos">Todos</label>
+							<label for="check-up-clinica">Clínica geral</label>
+							<label for="check-up-dermatologia">Dermatologia</label>
+							<label for="check-up-preventiva">Preventiva</label>
+						</div>
+						<div class="profissionais-lista">
+							<a href="./perfil-veterinario.html#check-up--dra-camila-rocha" class="profissional-card profissional-card--clinica">
+								<img src="../Assets/dra-camila-rocha.png" alt="Dra. Camila Rocha">
+								<div>
+									<h2>Dra. Camila Rocha</h2>
+									<p>Clínica geral</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#check-up--dr-lucas-martins" class="profissional-card profissional-card--dermatologia">
+								<img src="../Assets/dr-lucas-martins.png" alt="Dr. Lucas Martins">
+								<div>
+									<h2>Dr. Lucas Martins</h2>
+									<p>Dermatologia</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+							<a href="./perfil-veterinario.html#check-up--dr-andre-silva" class="profissional-card profissional-card--preventiva">
+								<img src="../Assets/dr-andre-silva.png" alt="Dr. André Silva">
+								<div>
+									<h2>Dr. André Silva</h2>
+									<p>Medicina preventiva</p>
+									<span>Ver perfil →</span>
+								</div>
+							</a>
+						</div>
+					</fieldset>
+				</section>
+			</div>
+		</main>
+		<footer class="rodape">
+			<div class="container rodape__conteudo">
+				<section class="rodape__marca">
+					<h2>VetCare</h2>
+					<p>Cuidado veterinário com acolhimento, confiança e ciência.</p>
+				</section>
+				<nav class="rodape__navegacao">
+					<h3>Navegação</h3>
+					<ul>
+						<li>
+							<a href="../index.html">Início</a>
+						</li>
+						<li>
+							<a href="./servicos.html">Serviços</a>
+						</li>
+						<li>
+							<a href="./sobre.html">Sobre</a>
+						</li>
+						<li>
+							<a href="./contato.html">Contato</a>
+						</li>
+					</ul>
+				</nav>
+				<section class="rodape__contato">
+					<h3>Contato</h3>
+					<address>
+						<p>(31) 3333-3333</p>
+						<p>contato@vetcare.com.br</p>
+						<p>Belo Horizonte - MG</p>
+					</address>
+				</section>
+			</div>
+			<div class="container rodape__inferior">
+				<p>© VetCare · Cuidado que também é ciência</p>
+			</div>
+		</footer>
+	</body>
+</html>

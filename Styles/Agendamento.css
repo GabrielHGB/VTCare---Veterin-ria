@@ -1,0 +1,243 @@
+/* =========================================================
+   AGENDAMENTO - VETCARE
+========================================================= */
+
+.agendamento-conteudo{
+    padding-top:32px;
+    padding-bottom:56px;
+}
+
+.agendamento{
+    display:none;
+}
+
+.agendamento--padrao{
+    display:block;
+}
+
+.agendamento:target{
+    display:block;
+}
+
+.pagina-agendamento:has(.agendamento:target) .agendamento--padrao:not(:target){
+    display:none;
+}
+
+.agendamento__escolhas{
+    margin-top:24px;
+    padding:20px;
+    border-radius:var(--raio-medio);
+    background-color:var(--cor-secundaria);
+}
+
+.agendamento__escolhas h2{
+    margin-bottom:10px;
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+}
+
+.agendamento__escolhas p+p{
+    margin-top:6px;
+}
+
+.agendamento__formulario{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.agendamento__linha{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.agendamento__formulario label{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    color:var(--cor-texto);
+    font-size:13px;
+    font-weight:600;
+}
+
+.agendamento__formulario input,.agendamento__formulario textarea{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-pequeno);
+    outline:none;
+    background-color:var(--cor-fundo);
+    color:var(--cor-texto);
+    font-size:14px;
+    font-weight:400;
+}
+
+.agendamento__formulario input:focus,.agendamento__formulario textarea:focus{
+    border-color:var(--cor-primaria);
+}
+
+.agendamento__controle,.agendamento__confirmar{
+    display:none;
+}
+
+.agendamento__acoes,.agendamento__confirmar-acoes{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+    width:100%;
+}
+
+.agendamento__revisao{
+    margin-top:24px;
+    padding:20px;
+    display:none;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-grande);
+}
+
+.agendamento__revisao>h2{
+    font-family:var(--fonte-titulo);
+    font-size:28px;
+}
+
+.agendamento__revisao>p{
+    margin-top:8px;
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+.agendamento__resumo{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:12px;
+}
+
+.agendamento__resumo article{
+    padding:16px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    border-radius:var(--raio-pequeno);
+    background-color:var(--cor-secundaria);
+}
+
+.agendamento__resumo span{
+    color:var(--cor-texto-secundario);
+    font-size:13px;
+    font-weight:600;
+}
+
+.agendamento__controle:checked~.agendamento__revisao{
+    display:block;
+}
+
+.agendamento__sucesso{
+    margin-top:20px;
+    padding:20px;
+    display:none;
+    border:1px solid var(--cor-sucesso);
+    border-radius:var(--raio-medio);
+    background-color:#E4F0EA;
+}
+
+.agendamento__sucesso h2{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+}
+
+.agendamento__sucesso p{
+    margin-bottom:16px;
+    color:var(--cor-texto-secundario);
+}
+
+.agendamento__confirmar:checked~.agendamento__confirmar-acoes{
+    display:none;
+}
+
+.agendamento__confirmar:checked~.agendamento__sucesso{
+    display:block;
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .agendamento__linha{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .agendamento-conteudo{
+        max-width:860px;
+        padding-top:48px;
+        padding-bottom:64px;
+    }
+
+    .agendamento__linha{
+        grid-template-columns:1fr 1fr;
+        gap:24px;
+    }
+
+    .agendamento__acoes,.agendamento__confirmar-acoes{
+        flex-direction:row;
+    }
+
+    .agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+        width:auto;
+    }
+
+    .agendamento__resumo{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .agendamento__revisao{
+        padding:28px;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .agendamento-conteudo{
+        max-width:980px;
+        padding-top:64px;
+        padding-bottom:80px;
+    }
+
+    .agendamento__linha{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+
+    .agendamento__acoes,.agendamento__confirmar-acoes{
+        flex-direction:row;
+    }
+
+    .agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+        width:auto;
+    }
+
+    .agendamento__resumo{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .agendamento__revisao{
+        padding:32px;
+    }
+}

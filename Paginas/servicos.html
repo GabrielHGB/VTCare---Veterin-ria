@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>VetCare | Serviços</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&amp;family=Work+Sans:wght@400;600&amp;display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="../Styles/Style.css">
+		<link rel="stylesheet" href="../Styles/Global.css">
+		<link rel="stylesheet" href="../Styles/Servicos.css">
+	</head>
+	<body>
+		<header class="cabecalho">
+			<div class="cabecalho__conteudo">
+				<a href="../index.html" class="logo">
+					<span class="logo__simbolo">V</span>
+					<span class="logo__nome">VetCare</span>
+				</a>
+				<input type="checkbox" id="menu-mobile" class="menu-mobile__controle">
+				<label for="menu-mobile" class="menu-mobile__botao">
+					<span></span>
+					<span></span>
+					<span></span>
+				</label>
+				<nav class="navegacao">
+					<ul class="navegacao__lista">
+						<li>
+							<a href="../index.html" class="navegacao__link">Início</a>
+						</li>
+						<li>
+							<a href="./servicos.html" class="navegacao__link navegacao__link--ativo">Serviços</a>
+						</li>
+						<li>
+							<a href="./sobre.html" class="navegacao__link">Sobre</a>
+						</li>
+						<li>
+							<a href="./contato.html" class="navegacao__link">Contato</a>
+						</li>
+					</ul>
+					<a href="./servicos.html" class="botao botao--primario navegacao__cta">Começar agendamento</a>
+				</nav>
+				<a href="./servicos.html" class="botao botao--primario cabecalho__cta">Começar agendamento</a>
+			</div>
+		</header>
+		<main class="pagina-servicos">
+			<section class="container servicos-conteudo">
+				<header class="pagina__cabecalho">
+					<h1>Nossos serviços</h1>
+					<p>Escolha um serviço para conhecer os detalhes antes de selecionar o profissional.</p>
+				</header>
+				<fieldset class="filtro-servicos">
+					<legend>Filtrar serviços</legend>
+					<input type="radio" name="filtro-servico" id="todos" checked>
+					<input type="radio" name="filtro-servico" id="higiene">
+					<input type="radio" name="filtro-servico" id="prevencao">
+					<input type="radio" name="filtro-servico" id="acompanhamento">
+					<div class="filtros">
+						<label for="todos">Todos</label>
+						<label for="higiene">Higiene</label>
+						<label for="prevencao">Prevenção</label>
+						<label for="acompanhamento">Acompanhamento</label>
+					</div>
+					<div class="servicos-lista">
+						<article class="servico-card servico-card--higiene">
+							<img src="../Assets/banho-tosa.png" alt="Banho e tosa">
+							<div>
+								<h2>Banho - Tosa</h2>
+								<span>Higiene · 45–60 min</span>
+								<p>Banho e tosa para seu pet de forma tranquila e segura.</p>
+								<a href="./detalhes-servico.html#banho-tosa">Ver detalhes →</a>
+							</div>
+						</article>
+						<article class="servico-card servico-card--prevencao">
+							<img src="../Assets/vacinacao.png" alt="Vacinação">
+							<div>
+								<h2>Vacinação</h2>
+								<span>Prevenção</span>
+								<p>Aplicação e acompanhamento do calendário de vacinas.</p>
+								<a href="./detalhes-servico.html#vacinacao">Ver detalhes →</a>
+							</div>
+						</article>
+						<article class="servico-card servico-card--acompanhamento">
+							<img src="../Assets/check-up.png" alt="Check-up">
+							<div>
+								<h2>Check-up</h2>
+								<span>Acompanhamento</span>
+								<p>Avaliação periódica para acompanhar a saúde do animal.</p>
+								<a href="./detalhes-servico.html#check-up">Ver detalhes →</a>
+							</div>
+						</article>
+					</div>
+				</fieldset>
+			</section>
+		</main>
+		<footer class="rodape">
+			<div class="container rodape__conteudo">
+				<section class="rodape__marca">
+					<h2>VetCare</h2>
+					<p>Cuidado veterinário com acolhimento, confiança e ciência.</p>
+				</section>
+				<nav class="rodape__navegacao">
+					<h3>Navegação</h3>
+					<ul>
+						<li>
+							<a href="../index.html">Início</a>
+						</li>
+						<li>
+							<a href="./servicos.html">Serviços</a>
+						</li>
+						<li>
+							<a href="./sobre.html">Sobre</a>
+						</li>
+						<li>
+							<a href="./contato.html">Contato</a>
+						</li>
+					</ul>
+				</nav>
+				<section class="rodape__contato">
+					<h3>Contato</h3>
+					<address>
+						<p>(31) 3333-3333</p>
+						<p>contato@vetcare.com.br</p>
+						<p>Belo Horizonte - MG</p>
+					</address>
+				</section>
+			</div>
+			<div class="container rodape__inferior">
+				<p>© VetCare · Cuidado que também é ciência</p>
+			</div>
+		</footer>
+	</body>
+</html>

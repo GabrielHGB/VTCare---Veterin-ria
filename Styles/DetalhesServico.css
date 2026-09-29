@@ -1,0 +1,162 @@
+/* =========================================================
+   DETALHESSERVICO - VETCARE
+========================================================= */
+
+.detalhes-conteudo{
+    padding-top:32px;
+    padding-bottom:56px;
+}
+
+.detalhe{
+    display:none;
+}
+
+.detalhe--padrao{
+    display:block;
+}
+
+.detalhe:target{
+    display:block;
+}
+
+.pagina-detalhes:has(.detalhe:target) .detalhe--padrao:not(:target){
+    display:none;
+}
+
+.detalhe__topo{
+    margin-top:24px;
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.detalhe__topo figure{
+    overflow:hidden;
+    border-radius:var(--raio-grande);
+}
+
+.detalhe__topo img{
+    aspect-ratio:358/233;
+    object-fit:cover;
+}
+
+.detalhe__texto{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.detalhe__texto h1{
+    font-family:var(--fonte-titulo);
+    font-size:36px;
+    font-weight:600;
+}
+
+.detalhe__texto>p,.detalhe__descricao p{
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+.detalhe__informacoes{
+    width:100%;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.detalhe__informacoes article{
+    padding:12px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    border-radius:var(--raio-pequeno);
+    background-color:var(--cor-secundaria);
+}
+
+.detalhe__informacoes span{
+    color:var(--cor-texto-secundario);
+    font-size:13px;
+    font-weight:600;
+}
+
+.detalhe__informacoes strong{
+    color:var(--cor-primaria);
+    font-size:16px;
+    font-weight:400;
+}
+
+.detalhe__descricao{
+    margin-top:40px;
+}
+
+.detalhe__descricao h2{
+    margin-bottom:12px;
+    font-family:var(--fonte-titulo);
+    font-size:28px;
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .detalhe__topo{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .detalhes-conteudo{
+        padding-top:48px;
+        padding-bottom:64px;
+    }
+
+    .detalhe__topo{
+        margin-top:32px;
+        display:grid;
+        grid-template-columns:minmax(280px,0.9fr) 1.1fr;
+        gap:32px;
+        align-items:center;
+    }
+
+    .detalhe__topo img{
+        aspect-ratio:4/3;
+    }
+
+    .detalhe__descricao{
+        margin-top:48px;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .detalhes-conteudo{
+        padding-top:64px;
+        padding-bottom:80px;
+    }
+
+    .detalhe__topo{
+        margin-top:32px;
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+    }
+
+    .detalhe__topo img{
+        aspect-ratio:620/430;
+    }
+
+    .detalhe__descricao{
+        max-width:900px;
+        margin-top:64px;
+    }
+}

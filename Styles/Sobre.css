@@ -1,0 +1,152 @@
+/* =========================================================
+   SOBRE - VETCARE
+========================================================= */
+
+.pagina-sobre{
+    padding:32px 0 56px;
+}
+
+.sobre-intro{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.sobre-intro figure,.sobre-estrutura figure{
+    overflow:hidden;
+    border-radius:var(--raio-grande);
+}
+
+.sobre-intro img,.sobre-estrutura img{
+    aspect-ratio:358/240;
+    object-fit:cover;
+}
+
+.sobre-intro div{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.sobre-intro h1{
+    font-family:var(--fonte-titulo);
+    font-size:36px;
+    font-weight:600;
+}
+
+.sobre-intro p,.sobre-historia p,.sobre-valores p,.sobre-estrutura p{
+    color:var(--cor-texto-secundario);
+    line-height:1.5;
+}
+
+.sobre-historia,.sobre-valores,.sobre-estrutura{
+    padding-top:40px;
+}
+
+.sobre-historia h2,.sobre-valores h2,.sobre-estrutura h2{
+    margin-bottom:10px;
+    font-family:var(--fonte-titulo);
+    font-size:28px;
+}
+
+.sobre-valores>div{
+    margin-top:24px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:16px;
+}
+
+.sobre-valores article{
+    padding:20px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+}
+
+.sobre-valores h3{
+    margin-bottom:8px;
+    font-family:var(--fonte-titulo);
+    font-size:22px;
+}
+
+.sobre-estrutura figure{
+    margin-top:24px;
+}
+
+/* =========================================================
+   MOBILE - até 699px
+========================================================= */
+
+@media (max-width:699px){
+    .sobre-intro{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =========================================================
+   TABLET - 700px até 999px
+========================================================= */
+
+@media (min-width:700px) and (max-width:999px){
+    .pagina-sobre{
+        padding:48px 0 64px;
+    }
+
+    .sobre-intro{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:32px;
+        align-items:center;
+    }
+
+    .sobre-intro img{
+        aspect-ratio:4/3;
+    }
+
+    .sobre-historia,.sobre-valores,.sobre-estrutura{
+        padding-top:48px;
+    }
+
+    .sobre-valores>div{
+        grid-template-columns:repeat(3,1fr);
+        gap:20px;
+    }
+
+    .sobre-estrutura img{
+        aspect-ratio:16/6;
+    }
+}
+
+/* =========================================================
+   DESKTOP - 1000px ou mais
+========================================================= */
+
+@media (min-width:1000px){
+    .pagina-sobre{
+        padding:64px 0 80px;
+    }
+
+    .sobre-intro{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+        align-items:center;
+    }
+
+    .sobre-intro img{
+        aspect-ratio:620/420;
+    }
+
+    .sobre-historia,.sobre-valores,.sobre-estrutura{
+        padding-top:64px;
+    }
+
+    .sobre-valores>div{
+        grid-template-columns:repeat(3,1fr);
+        gap:40px;
+    }
+
+    .sobre-estrutura img{
+        aspect-ratio:1280/420;
+    }
+}
