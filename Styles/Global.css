@@ -121,7 +121,8 @@
 }
 
 .rodape{
-    display:none;
+    display:none;   
+    bottom: 0;
 }
 
 

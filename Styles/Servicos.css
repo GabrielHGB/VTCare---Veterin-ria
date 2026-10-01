@@ -12,14 +12,17 @@
     gap:28px;
 }
 
-.filtro-servicos{
-    border:0;
-}
-
 .filtro-servicos legend{
     margin-bottom:12px;
     font-size:13px;
     font-weight:600;
+}
+
+.filtro-servicos{
+    width:auto;
+    padding:0;
+    border:0;
+
 }
 
 .filtro-servicos>input{
@@ -27,10 +30,10 @@
 }
 
 .filtros{
+    width:100%;
     margin-bottom:24px;
     display:flex;
     gap:8px;
-    overflow-x:auto;
 }
 
 .filtros label{
@@ -60,11 +63,6 @@
     border:1px solid var(--cor-secundaria);
     border-radius:var(--raio-medio);
     background-color:var(--cor-fundo);
-}
-
-.servico-card img{
-    aspect-ratio:358/210;
-    object-fit:cover;
 }
 
 .servico-card div{
@@ -106,36 +104,46 @@
 ========================================================= */
 
 @media (max-width:699px){
-    .servicos-lista{
-        grid-template-columns:1fr;
-    }
-}
-
-/* =========================================================
-   TABLET - 700px até 999px
-========================================================= */
-
-@media (min-width:700px) and (max-width:999px){
-    .pagina-servicos{
-        padding:48px 0 64px;
-    }
-
     .servicos-conteudo{
-        gap:32px;
+        min-width:0;
+    }
+
+    .filtro-servicos{
+        width:100%;
+        min-width:0;
+        padding:0;
+        border:0;
+        box-sizing:border-box;
     }
 
     .filtros{
-        overflow:visible;
+        width:calc(100% + 16px);
+        margin-right:-16px;
+        display:flex;
+        gap:8px;
+        overflow-x:auto;
+        white-space:nowrap;
+        scrollbar-width:none;
+    }
+
+    .filtros::-webkit-scrollbar{
+        display:none;
+    }
+
+    .filtros label{
+        flex:0 0 auto;
+        min-width:max-content;
     }
 
     .servicos-lista{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:24px;
+        width:100%;
+        min-width:0;
     }
 
-    .servico-card img{
-        aspect-ratio:16/10;
+    .servico-card{
+        width:100%;
+        min-width:0;
+        box-sizing:border-box;
     }
 }
 
@@ -162,7 +170,4 @@
             gap:40px;
         }
 
-        .servico-card img{
-            aspect-ratio:400/240;
-        }
 }

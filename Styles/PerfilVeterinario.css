@@ -106,6 +106,10 @@
     .perfil__topo{
         grid-template-columns:1fr;
     }
+
+    .botao--primario{
+        width:100%;
+    }
 }
 
 /* =========================================================

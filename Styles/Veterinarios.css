@@ -111,33 +111,60 @@ input[id$="-todos"]:checked~.filtros label[for$="-todos"],input[id$="-clinica"]:
 ========================================================= */
 
 @media (max-width:699px){
-    .profissionais-lista{
-        grid-template-columns:1fr;
-    }
-}
-
-/* =========================================================
-   TABLET - 700px até 999px
-========================================================= */
-
-@media (min-width:700px) and (max-width:999px){
     .profissionais-conteudo{
-        padding-top:48px;
-        padding-bottom:64px;
+        width:calc(100% - 32px);
+        min-width:0;
+        margin:0 auto;
+        padding-top:32px;
+        padding-bottom:56px;
+    }
+
+    .filtro-profissionais{
+        width:100%;
+        min-width:0;
+        padding:0;
+        border:0;
     }
 
     .filtros{
-        overflow:visible;
+        width:calc(100% + 16px);
+        max-width:none;
+        margin-right:-16px;
+        margin-bottom:24px;
+        display:flex;
+        gap:8px;
+        overflow-x:auto;
+        white-space:nowrap;
+        scrollbar-width:none;
+    }
+
+    .filtros::-webkit-scrollbar{
+        display:none;
+    }
+
+    .filtros label{
+        flex:0 0 auto;
+        min-width:max-content;
     }
 
     .profissionais-lista{
-        display:grid;
-        grid-template-columns:repeat(2,1fr);
-        gap:24px;
+        width:100%;
+        min-width:0;
+        display:flex;
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .profissional-card{
+        width:100%;
+        min-width:0;
+        box-sizing:border-box;
     }
 
     .profissional-card img{
-        aspect-ratio:16/10;
+        width:100%;
+        aspect-ratio:326/190;
+        object-fit:cover;
     }
 }
 

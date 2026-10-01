@@ -43,6 +43,12 @@ body{
     background-color:var(--cor-fundo);
     color:var(--cor-texto);
     font-family:var(--fonte-corpo);
+    display:flex;
+    flex-direction:column;
+}
+
+main{
+    flex:1;
 }
 
 img{

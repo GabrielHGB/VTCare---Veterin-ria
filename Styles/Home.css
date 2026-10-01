@@ -33,12 +33,12 @@
 
 .hero__acoes{
     display:flex;
-    flex-direction:column;
+    flex-direction: row;
     gap:12px;
 }
 
 .hero__acoes .botao{
-    width:100%;
+    width:auto;
 }
 
 .hero__imagem{

@@ -23,6 +23,29 @@
     display:none;
 }
 
+
+/* =========================================================
+   CONTROLE
+========================================================= */
+
+.agendamento__controle{
+    display:none;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+.agendamento__cabecalho--confirmacao{
+    display:none;
+}
+
+
+/* =========================================================
+   ESCOLHAS
+========================================================= */
+
 .agendamento__escolhas{
     margin-top:24px;
     padding:20px;
@@ -39,6 +62,11 @@
 .agendamento__escolhas p+p{
     margin-top:6px;
 }
+
+
+/* =========================================================
+   FORM
+========================================================= */
 
 .agendamento__formulario{
     margin-top:24px;
@@ -62,7 +90,8 @@
     font-weight:600;
 }
 
-.agendamento__formulario input,.agendamento__formulario textarea{
+.agendamento__formulario input,
+.agendamento__formulario textarea{
     width:100%;
     padding:14px 16px;
     border:1px solid var(--cor-secundaria);
@@ -70,111 +99,131 @@
     outline:none;
     background-color:var(--cor-fundo);
     color:var(--cor-texto);
+    font-family:var(--fonte-corpo);
     font-size:14px;
     font-weight:400;
 }
 
-.agendamento__formulario input:focus,.agendamento__formulario textarea:focus{
+.agendamento__formulario input:focus,
+.agendamento__formulario textarea:focus{
     border-color:var(--cor-primaria);
 }
 
-.agendamento__controle,.agendamento__confirmar{
-    display:none;
+.agendamento__formulario textarea{
+    resize:vertical;
 }
 
-.agendamento__acoes,.agendamento__confirmar-acoes{
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.agendamento__acoes{
     margin-top:24px;
     display:flex;
     flex-direction:column;
     gap:12px;
 }
 
-.agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+.agendamento__acoes .botao{
     width:100%;
 }
 
-.agendamento__revisao{
-    margin-top:24px;
-    padding:20px;
+.agendamento__acoes--confirmacao{
     display:none;
-    border:1px solid var(--cor-secundaria);
-    border-radius:var(--raio-grande);
 }
 
-.agendamento__revisao>h2{
-    font-family:var(--fonte-titulo);
-    font-size:28px;
+
+/* =========================================================
+   MODO CONFIRMAÇÃO
+========================================================= */
+
+.agendamento__controle:checked~.agendamento__cabecalho--normal{
+    display:none;
 }
 
-.agendamento__revisao>p{
-    margin-top:8px;
-    color:var(--cor-texto-secundario);
-    line-height:1.5;
+.agendamento__controle:checked~.agendamento__cabecalho--confirmacao{
+    display:block;
 }
 
-.agendamento__resumo{
-    margin-top:20px;
-    display:grid;
-    grid-template-columns:1fr;
-    gap:12px;
+.agendamento__controle:checked~.agendamento__acoes--normal{
+    display:none;
 }
 
-.agendamento__resumo article{
-    padding:16px;
+.agendamento__controle:checked~.agendamento__acoes--confirmacao{
     display:flex;
-    flex-direction:column;
-    gap:6px;
-    border-radius:var(--raio-pequeno);
-    background-color:var(--cor-secundaria);
 }
 
-.agendamento__resumo span{
+
+/* Formulário passa a parecer um resumo */
+
+.agendamento__controle:checked~.agendamento__formulario{
+    padding:20px;
+    gap:20px;
+    border:1px solid var(--cor-secundaria);
+    border-radius:var(--raio-medio);
+    background-color:var(--cor-fundo);
+}
+
+.agendamento__controle:checked~.agendamento__formulario label{
+    gap:6px;
     color:var(--cor-texto-secundario);
     font-size:13px;
+}
+
+.agendamento__controle:checked~.agendamento__formulario input,
+.agendamento__controle:checked~.agendamento__formulario textarea{
+    padding:0;
+    border:0;
+    border-radius:0;
+    outline:none;
+    background-color:transparent;
+    color:var(--cor-texto);
+    font-size:15px;
     font-weight:600;
+    pointer-events:none;
 }
 
-.agendamento__controle:checked~.agendamento__revisao{
-    display:block;
+.agendamento__controle:checked~.agendamento__formulario textarea{
+    min-height:24px;
+    resize:none;
 }
 
-.agendamento__sucesso{
-    margin-top:20px;
-    padding:20px;
-    display:none;
-    border:1px solid var(--cor-sucesso);
-    border-radius:var(--raio-medio);
-    background-color:#E4F0EA;
-}
-
-.agendamento__sucesso h2{
-    margin-bottom:8px;
-    font-family:var(--fonte-titulo);
-    font-size:22px;
-}
-
-.agendamento__sucesso p{
-    margin-bottom:16px;
-    color:var(--cor-texto-secundario);
-}
-
-.agendamento__confirmar:checked~.agendamento__confirmar-acoes{
+.agendamento__controle:checked~.agendamento__formulario input::-webkit-calendar-picker-indicator{
     display:none;
 }
 
-.agendamento__confirmar:checked~.agendamento__sucesso{
-    display:block;
-}
 
 /* =========================================================
    MOBILE - até 699px
 ========================================================= */
 
 @media (max-width:699px){
+    .agendamento-conteudo{
+        width:calc(100% - 32px);
+        min-width:0;
+        margin:0 auto;
+    }
+
+    .agendamento{
+        min-width:0;
+    }
+
     .agendamento__linha{
         grid-template-columns:1fr;
     }
+
+    .agendamento__formulario{
+        min-width:0;
+    }
+
+    .agendamento__formulario input,
+    .agendamento__formulario textarea{
+        min-width:0;
+        box-sizing:border-box;
+    }
 }
+
 
 /* =========================================================
    TABLET - 700px até 999px
@@ -192,22 +241,19 @@
         gap:24px;
     }
 
-    .agendamento__acoes,.agendamento__confirmar-acoes{
+    .agendamento__acoes{
         flex-direction:row;
     }
 
-    .agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+    .agendamento__acoes .botao{
         width:auto;
     }
 
-    .agendamento__resumo{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .agendamento__revisao{
+    .agendamento__controle:checked~.agendamento__formulario{
         padding:28px;
     }
 }
+
 
 /* =========================================================
    DESKTOP - 1000px ou mais
@@ -225,19 +271,15 @@
         gap:40px;
     }
 
-    .agendamento__acoes,.agendamento__confirmar-acoes{
+    .agendamento__acoes{
         flex-direction:row;
     }
 
-    .agendamento__acoes .botao,.agendamento__confirmar-acoes .botao{
+    .agendamento__acoes .botao{
         width:auto;
     }
 
-    .agendamento__resumo{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .agendamento__revisao{
+    .agendamento__controle:checked~.agendamento__formulario{
         padding:32px;
     }
 }
